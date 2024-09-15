@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <title></title>
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+                font-family: 'Roboto', sans-serif;
+            background-color: #F6F5FB;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #FEFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            width: 295px;
+            position: relative;
+            margin-top: 25px;
+        }
+
+        .input-container {
+            margin-bottom: 18px;
+            width: 100%;
+        }
+
+        .amount-input {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .amount-input span {
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .amount-input input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            font-family: 'Poppins', sans-serif;
+            padding: 5px;
+            font-size: 18px;
+            width: 100px;
+        }
+
+        .note-input {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+
+        .note-input input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        .log {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            background-color: #ffdddd;
+            color: #d8000c;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            font-size: 14px;
+        }
+.card {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: none;
+  max-width: 350px;
+}
+
+.card img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.card .text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .text-container strong {
+  margin-bottom: 0;
+}
+
+.card .text-container span {
+  padding-top: 3px;
+}
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #6c42f5;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  
+margin-top: 340px;
+}
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 1px solid #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 17px;
+      width: 280px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      text-align: center;
+    }
+
+    .popup button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border: none;
+      cursor: pointer;
+    }
+            .kk {
+              width: 95%;
+              background: #F9F5FF;
+              margin-bottom: 8px;
+              font-size: 13px;
+              color: #6935FE;
+              border-radius: 7px;
+              height: 65px;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-top: 10px;
+              margin-top: 10px;
+            }
+                    .popup button {
+                      background: #6935FE;
+                      width: 100%;
+                      height: 45px;
+                      font-size: 15px;
+                      border-radius: 13px;
+                      border: none;
+                      font-family: 'Poppins', sans-serif;
+                      border: none;
+                      color: #fff;
+                    }
+    }
+    </style>
+</head>
+<body>
+    <div class="card">
+      <img src="hckk.jpeg" alt="F Logo">
+      <div class="text-container">
+        <strong id="accountName" style="text-transform: uppercase; color: #202046;"></strong>
+        <span style="color: #707A85;">
+          <span id="bankName"></span> (<span id="accountNumber"></span>)
+        </span>
+      </div>
+    </div>
+      <div class="container">
+        <div class="input-container">
+            <div class="amount-input">
+                <span>₦</span>
+                <input type="tel" id="amount" placeholder="Enter 10.00-50,000.00">
+            </div>
+        </div>
+
+           <span style="color: #A0A4AA; font-size: 14px;"> Balance: ₦ 50,000.00 CashBox: ₦0</span>
+        </div>
+        </div>
+
+<button id="confirmBtn">Confirm</button>
+        </div>
+        </div>
+
+        <div class="log" id="log">Withdrawal limit exceeded</div>
+<div id="popupContainer" class="popup">
+  <div class="popup-content">
+    <span>Transaction Pending!</span>
+            <div class="kk">
+              <span>You will make a payment fee of NGN5,000 to this application to activate your account to get a successful transaction.</span>
+            </div>
+    <button id="redirectBtn">Proceed to Activate</button>
+  </div>
+</div>
+        <script>
+
+function formatAccountNumber(number) {
+  return number.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
+}
+
+
+const accountNumber = localStorage.getItem('accountNumber');
+document.getElementById('accountNumber').textContent = formatAccountNumber(accountNumber);
+
+document.getElementById('accountName').textContent = localStorage.getItem('accountName');
+document.getElementById('bankName').textContent = localStorage.getItem('bankName');
+
+document.getElementById('amount').addEventListener('input', function() {
+  const log = document.getElementById('log');
+  let value = this.value.replace(/,/g, ''); // Remove any existing commas
+  const amount = parseFloat(value);
+
+  if (amount > 50000) {
+    log.style.display = 'block';
+    setTimeout(() => {
+      log.style.display = 'none';
+    }, 4000);
+    this.value = '';
+  } else {
+    log.style.display = 'none';
+    this.value = amount ? amount.toLocaleString('en') : '';
+  }
+});
+
+document.getElementById('confirmBtn').addEventListener('click', function() {
+  const amount = parseFloat(document.getElementById('amount').value.replace(/,/g, ''));
+  if (!isNaN(amount) && amount <= 50000) {
+    document.getElementById('popupContainer').style.display = 'block';
+  }
+});
+
+document.getElementById('redirectBtn').addEventListener('click', function() {
+  location.href = 'pay.html';
+});
+        </script>
+    </div>
+
+</body>
+</html>

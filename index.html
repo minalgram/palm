@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+  <title></title>
+</head>
+<style>
+body {           
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  padding: 16px;
+  background: #FFFFFF;
+}
+.input-container {
+    position: relative;
+    border-bottom: 1px solid #ddd; 
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+
+.input-image {
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
+}
+
+input[type="tel"], input[type="text"] {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0;
+    font-size: 16px;
+    color: #6E7883;
+    font-family: 'Poppins', sans-serif;
+}
+
+.clear-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ccc;
+    padding: 0;
+}
+
+.clear-button:hover {
+    color: #000;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 10px;
+    accent-color: #6935FE;
+}
+
+label {
+    font-size: 13px;
+    color: #6E7883;
+}
+
+label span {
+    color: #6935FE;
+    text-decoration: none;
+}
+
+label span:hover {
+    text-decoration: underline;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.popup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 17px;
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.kk {
+    width: 90%;
+    background: #F9F5FF;
+    margin-bottom: 18px;
+    font-size: 15px;
+    color: #6935FE;
+    border-radius: 7px;
+    height: 50px;
+    padding: 12px;
+    padding-top: 10px;
+}
+
+.popup-container button {
+    background: #6935FE;
+    width: 100%;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 13px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+  .cond button {
+    background: #E7DEFF;
+    width: 100%;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 13px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    transition: background 0.3s ease;
+  }
+
+  .cond button.disabled {
+    background: #E7DEFF;
+    cursor: not-allowed;
+  }
+
+  .cond button:not(.disabled):hover {
+    background: #6935FE;
+  }
+</style>
+<body>
+    <br>
+
+  <img src="ph.jpeg" alt="ph.jpeg" style="width: 70%;">
+  <br>  
+
+  <br>
+<form onsubmit="return handleSubmit()">
+  <div class="input-container">
+    <img src="flag.jpeg" alt="Flag" class="input-image">
+    <input type="tel" id="phoneNumber" placeholder="Please enter mobile number" maxlength="13" oninput="formatPhoneNumber(this); validateForm();" style="font-size: 15px;">
+    <button type="button" class="clear-button" onclick="clearPhoneInput()">&#x2716;</button>
+  </div>
+
+  <div class="input-container">
+    <input type="text" id="fullName" placeholder="Full Name" oninput="validateForm(); validateFullName();">
+    <button type="button" class="clear-button" onclick="clearNameInput()">&#x2716;</button>
+  </div>
+
+  <div class="checkbox-container">
+    <input type="checkbox" id="agreeCheckbox" onclick="validateForm();">
+    <label for="agreeCheckbox">I have read, understood, and agreed to <span>Terms and Conditions</span> & <span>Privacy Policy</span></label>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="cond">
+    <button type="submit" class="disabled">Confirm</button>
+  </div>
+</form>
+
+<div class="overlay" id="overlay">
+  <div class="popup-container">
+    <p>Should we proceed?</p>
+    <div class="kk">
+      <span>Your account has been credited with ₦50,000.</span>
+    </div>
+    <button onclick="proceed()">Proceed</button>
+  </div>
+</div>
+
+<script>
+  function clearPhoneInput() {
+    document.getElementById('phoneNumber').value = '';
+    validateForm();
+  }
+  
+  function clearNameInput() {
+    document.getElementById('fullName').value = '';
+    validateForm();
+  }
+  
+  function formatPhoneNumber(input) {
+    const cleaned = input.value.replace(/\D/g, ''); 
+    const match = cleaned.match(/^(\d{0,3})(\d{0,4})(\d{0,4})$/);
+  
+    if (match) {
+      input.value = [match[1], match[2], match[3]].filter(Boolean).join(' ').trim();
+    }
+  }
+  
+  function validateFullName() {
+    const fullName = document.getElementById('fullName').value.trim();
+    const isValid = fullName.split(' ').length >= 2;
+    return isValid;
+  }
+  
+  function validateForm() {
+    const phoneNumber = document.getElementById('phoneNumber').value.replace(/\D/g, '');
+    const fullName = document.getElementById('fullName').value.trim();
+    const agreeCheckbox = document.getElementById('agreeCheckbox').checked;
+    
+    const isValid = phoneNumber.length === 11 && validateFullName() && agreeCheckbox;
+    
+    const submitButton = document.querySelector('.cond button');
+    
+    if (isValid) {
+      submitButton.classList.remove('disabled');
+    } else {
+      submitButton.classList.add('disabled');
+    }
+  }
+  
+  function handleSubmit() {
+    const phoneNumber = document.getElementById('phoneNumber').value.replace(/\D/g, '');
+    const fullName = document.getElementById('fullName').value.trim();
+    const agreeCheckbox = document.getElementById('agreeCheckbox').checked;
+
+    if (phoneNumber.length !== 11) {
+      alert("Phone number must be 11 digits.");
+      return false;
+    }
+
+    if (!validateFullName()) {
+      alert("Please enter your full name (first and last name).");
+      return false;
+    }
+
+    if (!agreeCheckbox) {
+      alert("You must agree to the terms and conditions.");
+      return false;
+    }
+
+    localStorage.setItem('fullName', fullName);
+
+    showPopup();
+    return false;
+  }
+  
+  function showPopup() {
+    document.getElementById('overlay').style.display = 'block';
+  }
+  
+  function proceed() {
+    location.href = 'dash.html';
+  }
+
+</script>
+</body>
+
+</html>

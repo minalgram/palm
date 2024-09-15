@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <title></title>
+</head>
+    <style>
+        body {
+           font-family: 'Roboto', sans-serif;
+           font-family: 'Poppins', sans-serif;
+            margin: 0;
+            color: #202046;
+            background-color: #F6F5FB;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 7px;
+        }
+        .info {
+            flex: 1;
+        }
+        .info h1 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .info p {
+            margin: 0;
+            font-size: 11px;
+            color: #777;
+        }
+        .icons {
+            display: flex;
+            gap: 20px;
+        }
+        .icons img {
+            width: 22px;
+            height: 26px;
+        }
+         .promo-card {
+            background-color: #E6EAFB;
+            padding: 11px;
+            border-radius: 12px;
+            
+            justify-content: space-between;
+            align-items: center;
+        }
+        .promo-card {
+            border-bottom-left-radius: 16px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 16px;
+            background-color: #ffffff;
+        }
+        .promo-card {
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .promo-content {
+            display: flex;
+            align-items: center;
+        }
+        .promo-content img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            margin-right: 5px;
+            
+        }
+        .promo-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .promo-card p span {
+            color: #6A4FF2;
+            font-weight: bold;
+        }
+        .promo-card .promo-arrow img {
+            width: 17px;
+            height: 17px;
+        }
+.bal {
+  background-color: #EBE9FF;
+  height: 70px;
+                box-shadow: 0px 0 0 4px #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.bal span {
+  font-size: 12px;
+}
+.bal p  {
+  padding-left: 2px;
+  font-weight: bold;
+}
+.bal button {
+  width: 80px;
+  height: 26px;
+  border-radius: 100px;
+  background: #6935FE;
+  color: #fff;
+  float: right;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+}
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            gap: 5px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 15px auto;
+        }
+        .option {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .option img {
+            width: 30px;
+            margin-bottom: 6px;
+        }
+        .option p {
+            margin: 0;
+            font-size: 13px;
+        }
+        .option .fee {
+            position: relative;
+            top: -30px;
+            right: -35px;
+            background-color: #ff3b3b;
+            color: white;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 12px;
+        }
+        .con {
+          height: 52px;
+          padding: 5px;
+          padding-right: 14px;
+          padding-left: 14px;
+          background: #fff;
+          border-radius: 15px;
+        }
+.services-container {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-top: 14px;
+}
+
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.services-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.more-button {
+    font-size: 14px;
+    color: #8a8a8a;
+    text-decoration: none;
+}
+/* Swiper Styles */
+.swiper-container {
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 22%;
+    margin-bottom: 15px;
+}
+
+.service-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+}
+
+.service-item span {
+    font-size: 12px;
+    color: #333;
+}
+
+
+.bod {
+    margin: 18px;
+}
+
+
+#draggableImage {
+    position: fixed;
+    bottom: 200px;
+    right: 20px;
+    width: 80px;
+    cursor: grab;
+    z-index: 1000;
+    transition: left 0.5s, opacity 1s;
+    clip-path: inset(0 0 0 0);
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.bottom-nav a {
+    color: #8a8a8a;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-nav a.active {
+    color: #7e57c2;
+}
+
+.bottom-nav img {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 5px;
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60%;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; 
+    animation: fadeIn 0.3s;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transform-origin: center;
+    animation: popupIn 0.5s ease-in-out;
+}
+
+.popup-content img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@keyframes popupIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#draggableImage {
+    position: fixed;
+    bottom: 200px;
+    right: 20px;
+    width: 80px;
+    cursor: grab;
+    z-index: 1000;
+    transition: left 0.5s, opacity 1s;
+    clip-path: inset(0 0 0 0);
+}
+        </style>
+<body>
+                      <img id="draggableImage" src="dra.png" alt="Draggable Image" width="100">
+
+    <div class="container">
+      <img src="hck.jpeg" alt="Avatar" class="avatar">
+      <div class="info">
+        <h1>Hi, <span id="userName"></span></h1>
+        <p>Welcome, let's make payment</p>
+      </div>
+      <div class="icons">
+        <img src="head.jpeg" alt="Support">
+        <img src="noti.jpeg" alt="Notifications">
+      </div>
+    </div>
+    <div class="bod">
+<div class="bal">
+  <span><img src="shi.jpeg" alt="" style="width: 12px;"> Available Balance <img src="eye.jpeg" alt="eye.jpeg" style="width: 13px;" onclick="toggleText()"></span>
+  
+     
+     <span style="float: right; padding-top: 3px;">Transaction History <img src="cor.jpeg" alt="cor.jpeg" style="width: 6px;"></span> 
+   <br>
+   
+        <button style="margin-top: 5px;">Add Money</button>
+
+     <p style="font-size: 19px; margin-top: 6px;" id="amount">₦50,000.00 <img src="3.jpeg" alt="3.jpeg" style="width: 7px; margin-left: 2px; margin-bottom: 2px;"></p>
+      </div>
+
+      <div class="promo-card">
+        <div class="promo-content">
+          <img src="box.jpeg" alt="Promo Icon">
+          <p style="font-size: 10px;">PalmPay Hacked Clone gives you <span>20% p.a.</span> daily</p>
+        </div>
+        <div class="promo-arrow">
+          <img src="colr.jpeg" alt="Arrow Icon">
+        </div>
+      </div>
+  
+     <div class="content">
+       <div class="option" onclick="myPa()">
+         <img src="pbnk.jpeg" alt="To PalmPay">
+         <p>To Bank</p>
+       </div>
+  
+       <div class="option" onclick="show()">
+         <img src="ppalm.jpeg" alt="To PalmPay">
+         <p>To PalmPay</p>
+       </div>
+  
+       <div class="option">
+         <img src="wpal.jpeg" alt="Withdraw">
+         <p>Withdraw</p>
+       </div>
+     </div>
+     <div class="con">
+       <strong style="font-size: 13px;">Received From PalmPay Ha...</strong>
+       
+ <span id="currentTime" style="float: right; font-size: 12px; color: #6E7883; padding-top: 20px;"></span></span>
+       <span style="color: #6E7883; font-size: 13px;">₦50,000.00 &nbsp; Success</span>
+     </div>
+     
+     
+     <div class="services-container">
+    <div class="services-header">
+        <h3 style="padding-top: 11px; padding-left: 13px; padding-bottom: 11px;">Services</h3>
+        <a href="#" class="more-button" style="padding-right: 13px; padding-top: 11px; padding-bottom: 11px;">More</a>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="service-item">
+                    <img src="air.jpeg" alt="Airtime">
+                    <span>Airtime</span>
+                </div>
+                <div class="service-item">
+                    <img src="dat.jpeg" alt="Data Bundle">
+                    <span>Data Bundle</span>
+                </div>
+                <div class="service-item">
+                    <img src="bal.jpeg" alt="Betting">
+                    <span>Betting</span>
+                </div>
+                <div class="service-item">
+                    <img src="ele.jpeg" alt="Electricity">
+                    <span>Electricity</span>
+                </div>
+                <div class="service-item">
+                    <img src="tv.jpeg" alt="TV">
+                    <span>TV</span>
+                </div>
+                <div class="service-item">
+                    <img src="wi.jpeg" alt="Win Big">
+                    <span>Win Big</span>
+                </div>
+                <div class="service-item">
+                    <img src="ref.jpeg" alt="Refer & Earn">
+                    <span>Refer & Earn</span>
+                </div>
+                <div class="service-item">
+                    <img src="cas.jpeg" alt="CashBox">
+                    <span>CashBox</span>
+                </div>
+                <div class="service-item">
+                    <img src="ins.jpeg" alt="Insurance">
+                    <span>Insurance</span>
+                </div>
+                <div class="service-item">
+                    <img src="sav.jpeg" alt="Savings">
+                    <span>Savings</span>
+                </div>
+                <div class="service-item">
+                    <img src="lo.jpeg" alt="Loan">
+                    <span>Loan</span>
+                </div>
+                <div class="service-item">
+                    <img src="re.jpeg" alt="Recharge2cash">
+                    <span>Recha2cash</span>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+            <div class="service-item">
+                    <img src="wec.jpeg" alt="Weac">
+                    <span>WEAC</span>
+                </div>
+                <div class="service-item">
+                    <img src="tp.jpeg" alt="Transport">
+                    <span>Transport</span>
+                </div>
+                <div class="service-item">
+                    <img src="gtf.jpeg" alt="Gift Card">
+                    <span>Gift Card</span>
+                </div>
+                <div class="service-item">
+                    <img src="int.jpeg" alt="Internet">
+                    <span>Internet</span>
+                </div>
+                <div class="service-item">
+                    <img src="mut.jpeg" alt="Mutual Fund">
+                    <span>Mutual Fund</span>
+                </div>
+                <div class="service-item">
+                    <img src="pym.jpeg" alt="Pay Me">
+                    <span>Pay Me</span>
+                </div>
+                <div class="service-item">
+                    <img src="invit.jpeg" alt="Invitation">
+                    <span>Invitation</span>
+                </div>
+                <div class="service-item">
+                    <img src="trial.jpeg" alt="Trial Cash">
+                    <span>Trial Cash</span>
+                </div>
+                <div class="service-item">
+                    <img src="edu.jpeg" alt="Education">
+                    <span>Education</span>
+                </div>
+                <div class="service-item">
+                    <img src="cory.jpeg" alt="Cowry Card">
+                    <span>Cowry Card</span>
+                </div>
+                <div class="service-item">
+                    <img src="wat.jpeg" alt="Water">
+                    <span>Water</span>
+                </div>
+                <div class="service-item">
+                    <img src="avat.jpeg" alt="AI Avatar">
+                    <span>AI Avatar</span>
+                </div>
+
+            </div>
+</div></div>
+            </div>
+
+   <div class="slider">
+    <div class="slides">
+        <div class="slide"><img src="sl1.jpeg" alt="Image 1"></div>
+        <div class="slide"><img src="sli2.jpeg" alt="Image 2"></div>
+        <div class="slide"><img src="sli3.jpeg" alt="Image 3"></div>
+        <div class="slide"><img src="sli4.jpeg" alt="Image 4"></div>
+        <div class="slide"><img src="sli5.jpeg" alt="Image 5"></div>
+
+    </div>
+
+         
+
+    <div class="bottom-nav">
+      <a href="#" class="active">
+        <img src="hme.jpeg" alt="Home">
+        <span>Home</span>
+      </a>
+
+      <a href="loa.html">
+        <img src="l.jpeg" alt="Loan">
+        <span>Loan</span>
+      </a>
+      <a href="#">
+        <img src="f.jpeg" alt="Finance">
+        <span>Finance</span>
+      </a>
+      <a href="#">
+        <img src="g.jpeg" alt="Reward">
+        <span>Reward</span>
+      </a>
+      <a href="me.html">
+        <img src="m.jpeg" alt="Me">
+        <span>Me</span>
+      </a>
+    </div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    function updateUserName() {
+      const fullName = localStorage.getItem('fullName');
+      if (fullName) {
+        document.getElementById('userName').textContent = fullName;
+      } else {
+        document.getElementById('userName').textContent = "User";
+      }
+    }
+
+
+    function updateTime() {
+      const currentTimeElement = document.getElementById('currentTime');
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      const displayHours = hours % 12 || 12;
+
+      currentTimeElement.textContent = `Today ${displayHours}:${minutes} ${ampm}`;
+    }
+
+
+    const img = document.getElementById('draggableImage');
+    let isDragging = false;
+    let offsetX, offsetY;
+    let snapTimeout;
+    let inactivityTimeout;
+
+    img.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+
+    img.addEventListener('touchstart', startDrag);
+    document.addEventListener('touchmove', drag, { passive: false });
+    document.addEventListener('touchend', stopDrag);
+
+    function startDrag(e) {
+      isDragging = true;
+      const event = e.type === 'touchstart' ? e.touches[0] : e;
+      offsetX = event.clientX - img.getBoundingClientRect().left;
+      offsetY = event.clientY - img.getBoundingClientRect().top;
+      img.style.cursor = 'grabbing';
+      img.style.transition = 'none';
+      img.style.opacity = '1';
+      clearTimeout(inactivityTimeout);
+      e.preventDefault();
+    }
+
+    function drag(e) {
+      if (isDragging) {
+        const event = e.type === 'touchmove' ? e.touches[0] : e;
+        img.style.left = `${event.clientX - offsetX}px`;
+        img.style.top = `${event.clientY - offsetY}px`;
+        e.preventDefault();
+      }
+    }
+
+    function stopDrag() {
+      if (isDragging) {
+        isDragging = false;
+        img.style.cursor = 'grab';
+
+        const screenWidth = window.innerWidth;
+        const imgRect = img.getBoundingClientRect();
+        const snapToLeft = imgRect.left + imgRect.width / 2 < screenWidth / 2;
+
+        img.style.transition = 'left 0.5s';
+        img.style.left = snapToLeft ? '0px' : `${screenWidth - imgRect.width}px`;
+
+        inactivityTimeout = setTimeout(() => {
+          img.style.transition = 'left 0.5s, opacity 1s';
+          img.style.left = snapToLeft ? '-50px' : `${screenWidth - imgRect.width + 50}px`; 
+          img.style.opacity = '0.5'; 
+        }, 3000);
+      }
+    }
+
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1, 
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: true
+    });
+
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+    let slideWidth = document.querySelector('.slide').clientWidth;
+    let startX, scrollX;
+
+    function updateSlidePosition() {
+      slides.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+
+    function showNextSlide() {
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateSlidePosition();
+    }
+
+    function showPrevSlide() {
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+      updateSlidePosition();
+    }
+
+    function autoSlide() {
+      showNextSlide();
+    }
+
+    let autoSlideInterval = setInterval(autoSlide, 3000); 
+
+    slides.addEventListener('mousedown', (e) => {
+      clearInterval(autoSlideInterval); 
+      startX = e.pageX;
+      slides.style.transition = 'none'; 
+    });
+
+    slides.addEventListener('mousemove', (e) => {
+      if (startX === undefined) return;
+      scrollX = e.pageX - startX;
+      slides.style.transform = `translateX(${-currentIndex * slideWidth + scrollX}px)`;
+    });
+
+    slides.addEventListener('mouseup', (e) => {
+      if (startX === undefined) return;
+      let threshold = slideWidth / 4;
+      if (scrollX < -threshold) {
+        showNextSlide();
+      } else if (scrollX > threshold) {
+        showPrevSlide();
+      }
+      slides.style.transition = 'transform 0.5s ease-in-out'; 
+      updateSlidePosition();
+      startX = undefined;
+      scrollX = undefined;
+      autoSlideInterval = setInterval(autoSlide, 3000);
+    });
+
+    slides.addEventListener('mouseleave', () => {
+      if (startX === undefined) return;
+      slides.dispatchEvent(new Event('mouseup'));
+    });
+
+    window.addEventListener('resize', () => {
+      slideWidth = document.querySelector('.slide').clientWidth;
+      updateSlidePosition();
+    });
+
+    function toggleText() {
+      const amountElement = document.getElementById("amount");
+      if (amountElement.textContent.includes("₦50,000.00")) {
+        amountElement.innerHTML = "₦**** <img src='3.jpeg' alt='3.jpeg' style='width: 7px; margin-left: 2px; margin-bottom: 2px;'>";
+      } else {
+        amountElement.innerHTML = "₦50,000.00 <img src='3.jpeg' alt='3.jpeg' style='width: 7px; margin-left: 2px; margin-bottom: 2px;'>";
+      }
+    }
+    
+    function myPa() {
+      location.href = 'with.html';
+    }
+    
+    function show() {
+      location.href = 'palmpay.html';
+    }
+
+    window.onload = function() {
+      updateUserName();
+      updateTime();
+    };
+</script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+  <title></title>
+</head>
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    background: #F6F5FB;
+    color: #202046;
+  }
+                .container {
+            display: flex;
+            align-items: center;
+            padding-left: 18px;
+            padding-right: 10px;
+        }
+        .avatar {
+            width: 43px;
+            height: 43px;
+            border-radius: 10%;
+            margin-right: 7px;
+        }
+        .info {
+            flex: 1;
+        }
+        .info h1 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .info p {
+            margin: 0;
+            font-size: 11px;
+            color: #777;
+        }
+        .icons img {
+            width: 65px;
+        }
+.dashboard {
+  background: #FFFFFF;
+  height: 155px;
+  border-radius: 13px;
+  width: 95%;
+  padding: 12px;
+}
+.pab {
+  padding: 19px;
+}
+.dashboard button {
+  width: 80px;
+  height: 26px;
+  border-radius: 100px;
+  background: #6935FE;
+  color: #fff;
+  float: right;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+}
+.con {
+  background: #FEF4E5;
+  height: 65px;
+  width: 95%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  color: #9A5E00;
+  padding-top: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.con button {
+  width: 80px;
+  height: 26px;
+  border-radius: 100px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #9A5E00;
+  margin-top: 17px;
+  float: right;
+  color: #9A5E00;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+}
+.but {
+  background: #FFFFFF;
+  height: 85px;
+  border-radius: 13px;
+  padding: 5px;
+  width: 95%;
+  padding-left: 18px;
+}
+.sht {
+  margin-top: 3px;
+}
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .bottom-nav a {
+            color: #8a8a8a;
+            text-decoration: none;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bottom-nav a.active {
+            color: #7e57c2;
+        }
+        .bottom-nav img {
+            width: 22px;
+            height: 22px;
+            margin-bottom: 5px;
+        }
+        .op img {
+          width: 15px;
+        }
+
+</style>
+<body>
+    <div class="container">
+      <img src="mep.png" alt="Avatar" class="avatar">
+      <div class="info">
+        <h1>DARK TEAM 🎩</h1>
+        <p><img src="me.jpeg" alt="me" style="width: 100px;"></p>
+      </div>
+      <div class="icons">
+        <img src="2.jpeg" alt="In">
+
+      </div>
+    </div>
+    <div class="pab">
+        <div class="dashboard">
+<span style="font-size: 14px;">Total Assets</span>
+<br>
+<div class="op">
+<strong style="font-size: 19px;" id="amount">₦50,000.00 <img src="ey.jpeg" alt="eye.jpeg" style="width: 15px;" onclick="toggleText()"></strong>
+<button>View</button>
+<br>
+</div>
+<span style="background: #F6F5FA; padding: 7px; font-size: 12px; border-radius: 40px; color: #747A81;">HackedPoint <span style="color: #6935FE; font-size: 12px;">5</span> <img src="oc.jpeg" alt="oc.jpeg" style="width: 6px;"></span>
+<img src="hr.jpeg" alt="hr.jpeg" style="width: 100%; height: 2px; margin-top: 12px;">
+<span style="font-size: 12px;">Yesterday's Earning: <span style="color: green; font-size: 13px;">₦0</span></span>
+<button>Earn More</button>
+</div>
+
+<div class="con">
+    <button>GO</button>
+  <span style="font-size: 11px;">Go ahead and upgrade your account to <br>
+  start using it for 100% free transactions</span>
+</div>
+<div class="but">
+  <span style="font-size: 13px;">Transaction History</span>
+  <div class="sht">
+<span id="currentTime" style="color: #6E7883; float: right; font-size: 11px; padding-right: 12px;"></span>
+  <strong style="font-size: 20px; padding-top: 66px;">+ 50,000.00</strong>
+  <br />
+  <span style="font-size: 14px;">RECIEVED from PalmPay Hacked Pay</span>
+</div>
+</div>
+<center>
+<img src="mese.jpeg" alt="mese.jpeg" style="width: 102%; margin-top: 12px;">
+<img src="li.jpeg" alt="l" style="width: 70%;">
+<br>
+<span style="#6E7883; font-size: 11px;">Powered By: HybridTech</span>
+<br>
+<span style="color: #9EA4AB; font-size: 11px; padding-bottom: 120px;">Version 5.3.10</span>
+
+    <div class="bottom-nav">
+            <a href="dash.html">
+        <img src="homs.jpeg" alt="Home">
+        <span>Home</span>
+      </a>
+      <a href="loa.html">
+        <img src="l.jpeg" alt="Loan">
+        <span>Loan</span>
+      </a>
+      <a href="#">
+        <img src="f.jpeg" alt="Finance">
+        <span>Finance</span>
+      </a>
+      <a href="#">
+        <img src="g.jpeg" alt="Reward">
+        <span>Reward</span>
+      </a>
+       <a href="#" class="active">
+        <img src="mes.jpeg" alt="Me">
+        <span>Me</span>
+      </a>
+    </div>
+    
+    <script>
+  function updateTime() {
+    const currentTimeElement = document.getElementById('currentTime');
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const displayHours = hours % 12 || 12;
+
+    currentTimeElement.textContent = `Today ${displayHours}:${minutes} ${ampm}`;
+  }
+
+  window.onload = updateTime;
+
+  function toggleText() {
+    const amountElement = document.getElementById("amount");
+    if (amountElement.innerHTML.includes("₦50,000.00")) {
+      amountElement.innerHTML = "₦**** <img src='ey.jpeg' alt='eye.jpeg' onclick='toggleText()'>";
+    } else {
+      amountElement.innerHTML = "₦50,000.00 <img src='ey.jpeg' alt='eye.jpeg' onclick='toggleText()'>";
+    }
+  }
+    </script>
+</body>
+
+</html>

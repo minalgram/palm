@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3ee0f23889.js" crossorigin="anonymous"></script>
+    <title>Earn Free</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;900&display=swap');
+
+           body {
+             background: #FFFFFF;
+             color: #4A4A4A;
+             font-family: 'Poppins', sans-serif;
+             margin: 0 auto;
+           }
+* {
+  font-family: 'Poppins', sans-serif;
+}
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 55px;
+            background-color: #f7f1ed;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            color: #4d3eab;
+            text-align: left;
+            font-weight: bold;
+        }
+        .item svg {
+            margin-right: 5px;
+        }
+      .con {
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 10px;
+        width: 330px;
+        margin: 0 auto;
+      }
+      
+      .header strong {
+        color: #6b21a8;
+        float: right;
+        padding-top: 10px;
+        font-size: 20px;
+      }
+      
+      .header p {
+        color: #888;
+      }
+      
+      .transfer-details p {
+        margin: 2px 0;
+        padding-top: 8px;
+      }
+      
+      .bank-details {
+        background-color: #F8F7FE;
+        padding: 10px;
+        height: 195px;
+        text-align: left;
+        border-radius: 5px;
+        margin: 25px 0;
+      }
+      .copy-con {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+      
+      .copy-con button {
+        background-color: #6b21a8;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        float: right;
+        border-radius: 5px;
+        cursor: pointer;
+        float: right;
+        margin-right: 15px;
+        cursor: pointer;
+        border: none;
+        position: relative;
+      }
+      
+      .copy-cont button:hover {
+        background-color: #581c87;
+      }
+      
+      .confirm-button {
+        background-color: #7B3FFC;
+        color: #fff;
+        border: none;
+        padding: 9px;
+        font-size: 15px;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        border: none;
+      }
+      
+      .confirm-button:hover {
+        background-color: #581c87;
+      }
+        
+       .header img {
+         width: 50px;
+         display: flex;
+       } 
+       .popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.loader {
+  color: #000;
+  font-size: 10px;
+  width: 1em;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 
+    2em -2em 0 0em, 3em 0 0 -1em, 
+    2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+    3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 
+    2em -2em 0 0, 3em 0 0 0.2em, 
+    2em 2em 0 0, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+     -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+     -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+     -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+    3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+    3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+.message {
+  display: none;
+}
+
+.message img {
+  max-width: 100px;
+}
+.popup-content img {
+  width: 80px;
+  margin-bottom: 0px;
+  margin-top: 16px;
+}
+.popup-notification {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.checkmark {
+  width: 40px;
+  margin-bottom: 7px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+          <i class="fa-solid fa-building-columns" style="padding-left: 19px; font-size: 13px;"></i>
+                  &nbsp;                 &nbsp; <p style="font-size: 17px;">Transfer</p>
+        </div>
+    </div>
+    </div>
+          <div class="con">
+            <div class="header">
+              <strong><b style="font-size: 13px; font-weight: lighter;">NGN</b> 5,000.00</strong>
+              <img src="palm.jpeg" alt="f.png">
+            </div>
+             <br>
+            <hr style="color: #F3F4F6;">
+            <center>
+            <div class="transfer-details">
+              <p>Transfer <strong>NGN 5,000.00</strong> from your bank to <strong> PalmPay Hacked</strong></p>
+              <div class="bank-details">
+           <img src="palm.jpeg" alt="" style="width: 40px; float: right; clip-path: circle(); margin-right: 11px; margin-top: 18px;">
+                <p>Bank</p>
+                <strong style="color: #000;">PalmPay</strong>
+                <p>Account Number</p>
+                <div class="copy-container">
+                  <strong id="accountNumber"  style="color: #000;">8902839952</strong>
+                  <button onclick="copyText('accountNumber')" style="color: #000;
+                  border: none;
+                  padding: 4px;
+                  float: right;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  float: right;
+                  margin-right: 9px;
+                  cursor: pointer;
+                  border: none;
+                  position: relative; width: 85px;
+                  background: #fff; font-size: 13px;
+                  border: 1px solid #ccc; border-radius: 8px;"><i class="fa-regular fa-copy"></i> Copy</button>
+                </div>
+                <p>Amount</p>
+                <div class="copy-container">
+                  <strong id="amount" style="color: #000;">NGN 5,000.00</strong>
+                  <button onclick="copyText('amount')" style="color: #000;
+                  border: none;
+                  padding: 4px;
+                  float: right;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  float: right;
+                  margin-right: 9px;
+                  cursor: pointer;
+                  border: none;
+                  position: relative; width: 85px;
+                  background: #fff; font-size: 13px;
+                  border: 1px solid #ccc; border-radius: 8px;"><i class="fa-regular fa-copy"></i> Copy</button>
+                </div>
+              </div>
+              <p style="font-size: 16px;">Ensure you send the exact amount indicated once</p>
+              <p style="font-size: 16px;">Once Payments is been confirmed you will get credited <strong>Immediately</strong></p>
+            </div>
+            <br>
+    <button class="confirm-button" onclick="showPopup()">I have sent NGN 5,000.00</button>
+  
+    <div id="popup-container" class="popup-container">
+      <div class="popup-content">
+        <span class="close-button" onclick="closePopup()" style="font-size: 22px; color: red; float: right;">X</span>
+               <center>
+
+        <div id="loader-container" class="loader"></div>
+        <p id="loading-message">Confirming Payments, please wait...</p>
+        <div id="message" class="message">
+          <img src="IMG_5563.jpeg" alt="Success Image">
+          <p>Payments has been confirmed!! you will be redirected immediately.</p>
+        </div>
+      </div>
+    </div>
+  
+    <hr style="color: #F3F4F6; padding-top: 0px; margin-top: 29px;">
+    <center>
+      <img src="dark.jpeg" alt="" style="width: 170px;">
+    </center>
+    
+    
+<div class="popup-notification" id="copyNotification">
+  <img src="check.png" alt="Check" class="checkmark">
+  <br>
+  <span>Copy Successfully</span>
+</div>
+
+
+    <script>
+function copyText(elementId) {
+  const text = document.getElementById(elementId).innerText;
+
+  navigator.clipboard.writeText(text).then(() => {
+    showCopyNotification();
+  }).catch(err => {
+    console.error("Failed to copy: ", err);
+  });
+}
+
+function showCopyNotification() {
+  const notification = document.getElementById('copyNotification');
+
+  notification.style.display = 'block';
+
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 1000);
+}
+
+function showPopup() {
+  const popupContainer = document.getElementById('popup-container');
+  const loaderContainer = document.getElementById('loader-container');
+  const loadingMessage = document.getElementById('loading-message');
+  const message = document.getElementById('message');
+
+  popupContainer.style.display = 'flex';
+
+  setTimeout(() => {
+    loaderContainer.style.display = 'none';
+    loadingMessage.style.display = 'none';
+    message.style.display = 'block';
+  }, 10000);
+}
+
+function closePopup() {
+  const popupContainer = document.getElementById('popup-container');
+  popupContainer.style.display = 'none';
+}
+    </script>
