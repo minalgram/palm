@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 15px;
+
+            background-color: #F6F5FB;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            margin-bottom: 15px;
+            background-color: #F6F5FB;
+        }
+
+        .header h1 {
+            font-size: 15px;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .header .icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .marquee-container {
+            display: flex;
+            align-items: center;
+            background-color: #F6F5FB;
+            overflow: hidden;
+            margin-bottom: 18px;  
+            position: relative;
+        }
+
+        .marquee-container img {
+            width: 20px;
+            z-index: 1;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            box-sizing: border-box;
+            animation: marquee 20s linear infinite;
+            color: #333;
+            font-size: 14px;
+            flex-grow: 1;
+            position: relative;
+            z-index: 0; 
+            margin-left: 10px; 
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    height: 387px;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.head {
+    text-align: center;
+    color: #6c42f5;
+    border-bottom: 1px solid #6c42f5;
+    padding-bottom: 2px;
+}
+
+.head h2 {
+    margin: 0;
+    padding-top: 9px;
+    font-size: 15px;
+}
+.head span {
+  font-size: 13px;
+}
+.notification {
+    display: flex;
+    align-items: center;
+    background-color: #f0e7ff;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 32px;
+    border-radius: 0px;
+    
+}
+
+.notification .audio-icon {
+    width: 18px;
+    margin-right: 10px;
+}
+
+.notification p {
+    flex: 1;
+    margin: 0;
+    font-size: 12px;
+    color: #202046;
+}
+
+.notification .arrow {
+    font-size: 29px;
+    color: #6c42f5;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+.next-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #c5a4ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.next-button:hover {
+    background-color: #b190ff;
+}
+.input-container {
+  margin-bottom: 18px;
+    width: 310px;
+}
+.account-input, .bank-input {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+.account-input input,
+.bank-input input {
+    border: none;
+    outline: none;
+              font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.account-input .icon-button,
+.bank-input .icon-button {
+    background: none;
+    border: none;
+}
+
+.icon-button img {
+    width: 7px;
+}
+
+.bank-logo {
+    width: 35px;
+    clip-path: circle();
+    margin-right: 10px;
+}
+
+.bank-name {
+    flex-grow: 1;
+    font-size: 16px;
+}
+.popup {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    balckground-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 1% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 85%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+#bankSearch {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.bank-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.bank-option img {
+    width: 35px;
+    clip-path: circle();
+    margin-right: 10px;
+}
+
+.bank-option:hover {
+    background-color: #f0f0f0;
+}
+.pad {
+  padding: 20px;
+}
+        .cont {
+            display: flex;
+            gap: 10px; 
+            margin-top: 15px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding-left: 5px;
+            height: 65px;
+            width: 100%; 
+        }
+
+        .card img {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px; 
+        }
+
+        .card-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .card-subtitle {
+            font-size: 10px;
+            color: #6b7280;
+            margin: 0;
+        }
+        .ven {
+width: 100%;
+height: 350px;
+background: #fff;
+border-radius: 18px;
+margin-top: 20px;
+        }
+        .ven img {
+          width: 110px;
+        }
+        .cond button:hover {
+          background: #6c42f5;
+        }
+        .cond button {
+          background: #E6DDFF;
+          width: 100%;
+          height: 45px;
+          border: none;
+          font-size: 16px;
+          margin-top: 35px;
+          border-radius: 13px;
+          color: #fff;
+          font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .popup-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 17px;
+            width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: transparent;
+            border: none;
+        }
+
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none; 
+        }
+        .kk {
+          width: 100%;
+          background: #F9F5FF;
+          margin-bottom: 18px;
+          font-size: 13px;
+          color: #6935FE;
+          border-radius: 7px;
+          height: 75px;
+          padding-top: 10px;
+        }
+        .popup-container button {
+          background: #6935FE;
+          width: 100%;
+          height: 45px;
+          font-size: 15px;
+          border-radius: 13px;
+          border: none;
+          font-family: 'Poppins', sans-serif;
+          color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="bck.jpeg" alt="Back" style="width: 25px; margin-right: 10px;" onclick="bck()">
+        <h1>Transfer to Bank</h1>
+        <img src="reel.jpeg" class="icon" alt="Icon" style="width: 40px; height: 20px;">
+    </div>
+    <div class="marquee-container">
+        <img src="vol.jpeg" alt="Speaker">
+        <div class="marquee">Dear Esteemed Hacked PalmPayer, You Are To Make A One Time Payments To This Application To Activate Your Hacked PalmPay Acccount, So You Can Start Using It For Transacts...</div>
+    </div>
+    <div class="container">
+
+      <div class="head">
+        <h2>To Other Bank</h2>
+        <span>Unlimited Free Transfers</span>
+      </div>
+
+
+      <div class="notification">
+        <img src="vol2.jpeg" alt="Audio Icon" class="audio-icon">
+        <p>UPDATED: PalmPay hacked app!</p>
+        <span class="arrow">&#8250;</span>
+      </div>
+<div class="pad">
+
+        <div class="input-container">
+          <div class="account-input" style="margin-bottom: 1px;">
+<input type="tel" id="accountNumber" placeholder="Enter Account Number" required oninput="formatPhoneNumber(this)" maxlength="12">
+          </div>
+        </div>
+        
+              <div class="account-input" style="margin-bottom: 15px;">
+                <input type="text" id="accountName" placeholder="Enter Account Name" required>
+              </div>
+        
+        <div class="input-container" style="margin-bottom: 0; margin-top: 18px;">
+          <div class="bank-input" onclick="showPopup()">
+            <img src="sl.jpeg" alt="" id="bankLogo" class="bank-logo">
+            <span id="bankName" class="bank-name">Select a Bank</span>
+            <button class="icon-button">
+              <img src="rig.jpeg" alt="Dropdown Icon">
+            </button>
+          </div>
+        </div>
+    
+
+        <div id="bankPopup" class="popup">
+          <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h3>Select Bank</h3>
+            <input type="text" id="bankSearch" placeholder="Enter the bank name to search">
+            <div id="bankList">
+
+              <div class="bank-option" onclick="selectBank('ACCESS BANK NIGERIA', 'access.png')">
+                <img src="access.png" alt="ACCESS BANK NIGERIA">
+                <span>ACCESS BANK NIGERIA</span>
+              </div>
+              <div class="bank-option" onclick="selectBank('CARBON', 'car.png')">
+                <img src="car.png" alt="">
+                <span>CARBON</span>
+              </div>
+
+              <div class="bank-option" onclick="selectBank('Chase Microfinance Bank', 'chass.png')">
+                <img src="chass.png" alt="">
+                <span>Chase Microfinance Bank</span>
+              </div>
+
+              <div class="bank-option" onclick="selectBank('Citibank Nigeria', 'city.png')">
+                <img src="city.png" alt="">
+                <span>Citibank Nigeria</span>
+              </div>
+
+              <div class="bank-option" onclick="selectBank('E-Finance', 'ef.png')">
+                <img src="ef.png" alt="">
+                <span>E-Finance</span>
+              </div>
+              
+              
+<div class="bank-option" onclick="selectBank('ECOBANK NIGERIA', 'eco.png')">
+ <img src="eco.png" alt="">
+ <span>ECOBANK NIGERIA PLC</span>
+ </div>
+ 
+ <div class="bank-option" onclick="selectBank('e-Tranzact', 'etr.png')">
+   <img src="etr.png" alt="">
+   <span>e-Tranzact</span>
+ </div>
+ 
+  <div class="bank-option" onclick="selectBank('EYOWO MICROFINANCE BANK', 'eyo.png')">
+    <img src="eyo.png" alt="">
+    <span>EYOWO MICROFINANCE BANK</span>
+  </div>
+  
+    <div class="bank-option" onclick="selectBank('FAIRMONEY MICROFINANCE', 'fair.jpeg')">
+      <img src="fair.jpeg" alt="">
+      <span style="font-size: 14px;">FAIRMONEY MICROFINANCE BANK</span>
+    </div>
+  
+<div class="bank-option" onclick="selectBank('FCMB', 'fcm.png')">
+<img src="fcm.png" alt="">
+<span>FCMB</span>
+</div>
+
+  <div class="bank-option" onclick="selectBank('FIDELITY BANK', 'fid.png')">
+    <img src="fid.png" alt="">
+    <span>FIDELITY BANK PLC</span>
+  </div>
+
+<div class="bank-option" onclick="selectBank('FIRST BANK', 'fir.png')">
+  <img src="fir.png" alt="">
+  <span>FIRST BANK PLC</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('GTBank', 'gt.png')">
+  <img src="gt.png" alt="">
+  <span>GTBank</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('Heritage Bank', 'heri.jpeg')">
+  <img src="heri.jpeg" alt="">
+  <span>Heritage Bank</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('JAIZ BANK', 'jaiz.jpeg')">
+  <img src="jaiz.jpeg" alt="">
+  <span>JAIZ BANK</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('KEYSTONE BANK', 'key.png')">
+  <img src="key.png" alt="">
+  <span>KEYSTONE BANK PLC</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('Kuda Microfinace Bank', 'kud.png')">
+  <img src="kud.png" alt="">
+  <span>Kuda Microfinace Bank</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('Moniepoint', 'moni.png')">
+  <img src="moni.png" alt="">
+  <span>Moniepoint Microfinance Bank</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('OPay', 'opay.png')">
+  <img src="opay.png" alt="">
+  <span>OPay</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('Paga', 'paga.jpeg')">
+  <img src="paga.jpeg" alt="">
+  <span>Paga</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('POLARIS BANK', 'pola.png')">
+  <img src="pola.png" alt="">
+  <span>POLARIS BANK</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('Sparkle', 'spark.png')">
+  <img src="spark.png" alt="">
+  <span>Sparkle</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('STANBIC IBTC BANK', 'stanbic.jpeg')">
+  <img src="stanbic.jpeg" alt="">
+  <span>STANBIC IBTC BANK</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('STERLING BANK PLC', 'ster.png')">
+  <img src="ster.png" alt="">
+  <span>STERLING BANK PLC</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('TITAN TRUST BANK', 'titan.png')">
+  <img src="titan.png" alt="">
+  <span>TITAN TRUST BANK</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('UNION BANK OF NIGERIA', 'uni.png')">
+  <img src="uni.png" alt="">
+  <span>UNION BANK OF NIGERIA</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('UNITED BANK FOR AFRICA', 'unit.png')">
+  <img src="unit.png" alt="">
+  <span>UBA BANK</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('UNITY MICROFINANCE BANK', 'uit.jpeg')">
+  <img src="uit.jpeg" alt="">
+  <span>UNITY MICROFINANCE BANK</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('VFD Microfinance Bank', 'v.jpeg')">
+  <img src="v.jpeg" alt="">
+  <span>VFD Microfinance Bank</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('WEMA BANK PLC', 'wem.png')">
+  <img src="wem.png" alt="">
+  <span>WEMA BANK PLC</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('ZENITH BANK PLC', 'zen.png')">
+  <img src="zen.png" alt="">
+  <span>ZENITH BANK PLC</span>
+</div>
+
+<div class="bank-option" onclick="selectBank('9 Payment Service Bank', '9.jpeg')">
+  <img src="9.jpeg" alt="">
+  <span>9 Payment Service Bank</span>
+</div>
+            </div>
+            </div>
+            </div>
+            <div class="cond">
+          <button onclick="openPopup()">Next</button>
+</div>
+</div>
+
+    <div class="cont">
+
+      <div class="card">
+        <img src="shed.jpeg" alt="Icon" style="width: 20px; height: 20px; margin-left: 10px;"> 
+        <div class="card-text">
+          <p class="card-title">Schedule Transfer</p>
+          <p class="card-subtitle">Transfer Multiple at once</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="netem.jpeg" alt="Icon" style="width: 20px; height: 20px; margin-left: 10px;"> 
+        <div class="card-text">
+          <p class="card-title">Network Monitor</p>
+          <p class="card-subtitle">Check real time network</p>
+        </div>
+      </div>
+    </div>
+    <center>
+    <div class="ven">
+      <img src="tran2.jpeg" alt="tran2.jpeg" style="width: 90%; margin-top: 10px; margin-bottom: 30px;">
+      <br>
+<img src="ted.jpeg" alt="Transac">
+<br>
+<strong style="color: #202046; font-size: 13px;">No Beneficiaries Yet</strong>
+<p style="color: #85898F; font-size: 12px;">Beneficiaries will be added automatically <br>if the transfer is successful</p>
+</div>
+    <div class="overlay" id="overlay">
+      <div class="popup-container">
+
+
+        <p>Should we proceed</p>
+        <div class="kk">
+<span>Kindly review the transfer details before proceeding, as successful transfers cannot be reversed.</span>
+</div>
+        <button onclick="location.href='amt.html'">Proceed</button>
+      </div>
+
+<script>
+  function formatPhoneNumber(input) {
+    let value = input.value.replace(/\D/g, '');
+
+    if (value.length > 10) {
+      value = value.slice(0, 10);
+    }
+
+    if (value.length > 3 && value.length <= 6) {
+      value = value.replace(/(\d{3})(\d{1,3})/, '$1 $2');
+    } else if (value.length > 6) {
+      value = value.replace(/(\d{3})(\d{3})(\d{1,4})/, '$1 $2 $3');
+    }
+
+    input.value = value; 
+  }
+
+  function showPopup() {
+    document.getElementById("bankPopup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("bankPopup").style.display = "none";
+  }
+
+  function selectBank(bankName, bankLogo) {
+    document.getElementById("bankName").textContent = bankName;
+    document.getElementById("bankLogo").src = bankLogo;
+    closePopup();
+  }
+
+  function openPopup() {
+    const accountNumber = document.getElementById("accountNumber").value.trim().replace(/\s/g, ''); // Remove spaces for validation
+    const accountName = document.getElementById("accountName").value.trim();
+    const bankName = document.getElementById("bankName").textContent;
+
+    if (accountNumber.length !== 10) {
+      alert("Account number must be exactly 10 digits.");
+      return;
+    }
+
+    if (!/^[A-Za-z]+ [A-Za-z]+$/.test(accountName)) {
+      alert("Account name is invalid.");
+      return;
+    }
+
+    if (bankName === "Select a Bank") {
+      alert("Please select a bank.");
+      return;
+    }
+
+    localStorage.setItem("accountNumber", accountNumber);
+    localStorage.setItem("accountName", accountName);
+    localStorage.setItem("bankName", bankName);
+
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function closeOverlay() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
+  function proceed() {
+    window.location.href = 'amt.html';
+  }
+
+  window.onload = function() {
+    const accountNumber = localStorage.getItem("accountNumber");
+    const accountName = localStorage.getItem("accountName");
+    const bankName = localStorage.getItem("bankName");
+
+    if (accountNumber && accountName && bankName) {
+      document.getElementById("accountNumberDisplay").textContent = accountNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
+      document.getElementById("accountNameDisplay").textContent = accountName;
+      document.getElementById("bankNameDisplay").textContent = bankName;
+    }
+  }
+
+  window.onclick = function(event) {
+    const popup = document.getElementById("bankPopup");
+    if (event.target === popup) {
+      closePopup();
+    }
+  }
+
+  function bck() {
+    location.href = 'dash.html';
+  }
+</script>
+</body>
+</html>
